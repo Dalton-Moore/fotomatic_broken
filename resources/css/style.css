@@ -1,4 +1,4 @@
-/* Universal Styles */
+/**************************************** Universal Styles ****************************************/
 
 html {
   font-family: "Roboto", sans-serif;
@@ -26,18 +26,19 @@ html {
 
 .image-container img {
   display: block;
+  /* added max-width to image container so images would display properly */
+  max-width: 100%;
 }
 
-@media only screen and (max-width: 760px) {
-  .main-content {
-    top: 2.5625rem;
-  }
-}
+/* media max width 760px, .main-content was here */
 
-/* Header */
+/**************************************** Header ****************************************/
 
 header {
   position: fixed;
+
+  /* added z-index to keep the header in the front */
+  z-index: 100;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
@@ -55,6 +56,7 @@ header .logo {
 
 header nav ul {
   display: flex;
+  list-style-type: none;
 }
 
 nav li {
@@ -77,49 +79,28 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
-  header .desktop {
-    display: none;
-  }
+        /* media max-width 760px was here, header.desktop-.mobile-.content-.mobile ul-.mobile li */
 
-  header .mobile {
-    display: block;
-    width: 100%;
-  }
-
-  header .content {
-    padding: .5rem 0;
-  }
-
-  header .mobile ul {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-  }
-
-  header .mobile li {
-    padding: 0;
-  }
-
-  header .mobile .button {
-    padding: .1875rem .5rem;
-    background-color: #9dc20b;
-    line-height: 1.6;
-    color: white;
-  }
-}
-
-/* Sign Up Section */
+/**************************************** Sign Up Section ****************************************/
 
 #sign-up-section {
   display: flex;
+  min-width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   height: 43.5rem;
+  /* added background image to sign up section */
+  background-image: url(../images/banner-landingpage.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #sign-up-cta {
+  /* added margin to sign up so it is lined up correcty */
+  margin: auto 10rem auto 5rem;
+
+  position: relative;
   padding: 0 5rem 2.5rem 5rem;
   border: solid 1px #979797;
   border-radius: 4px;
@@ -161,6 +142,187 @@ header .mobile {
   padding: 1.25rem 7.25rem;
 }
 
+        /* media max width 760px was here, sign-up-cta */
+        /* media max width 460px was here. sign-up-section */
+
+/**************************************** Features Section ****************************************/
+
+#features-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 5%;
+  background-color: #f3f3f3;
+}
+
+.feature {
+  flex: 1;
+  padding: 2rem;
+  margin: 0px 1.25rem;
+  background-color: white;
+}
+
+.feature .image-container {
+  width: 90%;
+  height: 65%;
+  margin: 0 auto;
+}
+
+/* added .feature .content for padding */
+.feature .content {
+  padding: 2.5rem 0;
+}
+
+.feature h2 {
+  padding-bottom: .5rem;
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.feature h3 {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #4a4a4a;
+}
+
+        /* media max width 890px was here, feature h2 and h3 */
+        /* media max width 890px was here, features and feature */
+
+/**************************************** Filters Section ****************************************/
+
+#filters-section {
+  padding: 4rem 0;
+  background-color: #4a4a4a;
+}
+
+#filters-section .content {
+  padding: 0 .625rem;
+  margin-bottom: 5rem;
+}
+
+#filters-section .content h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+#filters-section .content h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 300;
+  color: white;
+}
+
+#filters-section .images-container {
+
+  /* made the images container's display flex in the filters section */
+  display: flex;
+  
+  max-width: 100%;
+  padding: 0 1%;
+}
+
+        /* media max width 760px was here, #filters-section */
+
+/**************************************** Quotes Section ****************************************/
+
+#quotes-section {
+
+  /* added padding to the top and bottom of the quote section */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  background-color: #f3f3f3;
+}
+
+#quotes-section content {
+  padding: 5rem 0;
+}
+
+/* added a period to quote to display proper styles */
+#quotes-section .quote {
+  padding-right: 1.875rem;
+  font-family: "Palatino", serif;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+/* added a period to quote-citation to display proper styles */
+#quotes-section .quote-citation {
+  height: 1.875rem;
+}
+
+        /* media maxwidth 760px was here, #quotes-section, content, quote, quote-citation */
+
+/**************************************** Footer ****************************************/
+
+footer {
+  background-color: #9b9b9b;
+  padding: 1.5rem 2rem;
+}
+
+footer .content {
+  color: white;
+  display: flex;
+  font-size: .75rem;
+}
+
+footer .copyright {
+  flex-grow: 1;
+}
+
+/* media min width 760px was here, footer .content */
+
+/**************************************** media  ****************************************/
+
+
+
+/* 
+/* from main content */
+@media only screen and (max-width: 760px) {
+  .main-content {
+    top: 2.5625rem;
+  }
+}
+
+/* from header section */
+@media only screen and (max-width: 760px) {
+  header .desktop {
+    display: none;
+  }
+
+  header .mobile {
+    display: block;
+    width: 100%;
+  }
+
+  header .content {
+    padding: .5rem 0;
+  }
+
+  header .mobile ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  header .mobile li {
+    padding: 0;
+  }
+
+  header .mobile .button {
+    padding: .1875rem .5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+}
+
+/* from sign up section */
 @media only screen and (max-width: 760px) {
   #sign-up-section {
     align-items: center;
@@ -193,6 +355,7 @@ header .mobile {
   }
 }
 
+/* from sign up section  */
 @media only screen and (max-width: 450px) {
   #sign-up-section {
     height: 20rem;
@@ -207,42 +370,7 @@ header .mobile {
   }
 }
 
-/* Features Section */
-
-#features-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 4rem 5%;
-  background-color: #f3f3f3;
-}
-
-.feature {
-  flex: 1;
-  padding: 2rem;
-  margin: 0px 1.25rem;
-  background-color: white;
-}
-
-.feature .image-container {
-  width: 90%;
-  height: 65%;
-  margin: 0 auto;
-}
-
-.feature h2 {
-  padding-bottom: .5rem;
-  font-size: 2.25rem;
-  font-weight: bold;
-  color: #4a4a4a;
-}
-
-.feature h3 {
-  font-size: 1rem;
-  line-height: 1.2;
-  font-weight: 300;
-  color: #4a4a4a;
-}
-
+/* from feature section */
 @media only screen and (max-width: 890px) {
   .feature h2 {
     font-size: 1.125rem;
@@ -256,6 +384,7 @@ header .mobile {
   }
 }
 
+/* from features */
 @media only screen and (max-width: 760px) {
   #features-section {
     flex-flow: column;
@@ -266,38 +395,13 @@ header .mobile {
     margin: 0;
     padding: 1.25rem 1rem 0 1rem;
   }
+  /* added class .feature .content and padding  */
+  .feature .content {
+    padding: 1.25rem 0 1.875rem 0;
+  }
 }
 
-/* Filters Section */
-
-#filters-section {
-  padding: 4rem 0;
-  background-color: #4a4a4a;
-}
-
-#filters-section .content {
-  padding: 0 .625rem;
-  margin-bottom: 5rem;
-}
-
-#filters-section .content h2 {
-  font-size: 2.25rem;
-  font-weight: bold;
-  color: white;
-}
-
-#filters-section .content h3 {
-  font-size: 1rem;
-  line-height: 1.4;
-  font-weight: 300;
-  color: white;
-}
-
-#filters-section .images-container {
-  max-width: 100%;
-  padding: 0 1%;
-}
-
+/* from filters section */
 @media only screen and (max-width: 760px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
@@ -328,29 +432,7 @@ header .mobile {
   }
 }
 
-/* Quotes Section */
-
-#quotes-section {
-  background-color: #f3f3f3;
-}
-
-#quotes-section content {
-  padding: 5rem 0;
-}
-
-#quotes-section quote {
-  padding-right: 1.875rem;
-  font-family: "Palatino", serif;
-  font-size: 1.875rem;
-  line-height: 1.1;
-  font-style: italic;
-  color: #4a4a4a;
-}
-
-#quotes-section quote-citation {
-  height: 1.875rem;
-}
-
+/* from quotes section */
 @media only screen and (max-width: 760px) {
   #quotes-section content {
     padding: 1.875rem .625rem;
@@ -368,23 +450,7 @@ header .mobile {
   }
 }
 
-/* Footer */
-
-footer {
-  background-color: #9b9b9b;
-  padding: 1.5rem 2rem;
-}
-
-footer .content {
-  color: white;
-  display: flex;
-  font-size: .75rem;
-}
-
-footer .copyright {
-  flex-grow: 1;
-}
-
+/* from footer section */
 @media only screen and (min-width: 760px) {
   footer .content {
     font-size: .625rem;
